@@ -1,40 +1,13 @@
 import { render } from '@testing-library/react';
 import './App.css';
 import React, {Component} from 'react';
+import Subject from './components/TOC';
+import Sub from './components/Sub';
+import Content from './components/Content';
 
-class Subject extends Component {
-  render(){
-    return (
-      <header>
-        <h1>{this.props.name}</h1>
-       {this.props.name}
-      </header>
-    );
-  }
-}
 
-function Sub() {
-  
-    return(
-      <ul>
-      <li><a href="1.html">HTML</a></li>
-      <li><a href="1.html">CSS</a></li>
-      <li><a href="1.html">JavaScript</a></li>
-      </ul>
-    );
-}
 
-function Content(props) {
-  return (
-    <header>
-    <h2>
-      {props.title}
-    </h2>
-    {props.sub}
-    </header>
-    
-  )
-}
+
 
 class App extends Component {
     render() {

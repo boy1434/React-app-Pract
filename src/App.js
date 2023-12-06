@@ -6,8 +6,8 @@ class Subject extends Component {
   render(){
     return (
       <header>
-        <h1>WEB</h1>
-        world wide web!
+        <h1>{this.props.name}</h1>
+       {this.props.name}
       </header>
     );
   }
@@ -22,16 +22,29 @@ function Sub() {
       <li><a href="1.html">JavaScript</a></li>
       </ul>
     );
+}
 
-  
+function Content(props) {
+  return (
+    <header>
+    <h2>
+      {props.title}
+    </h2>
+    {props.sub}
+    </header>
+    
+  )
 }
 
 class App extends Component {
     render() {
       return (
         <div className="App">
-        <Subject/>
+        <Subject name="WEBBBB"/>
+        <Subject name="World Wide Web!"/>
         <Sub/>
+        <Content title="Welcome React" sub="hihihi" />
+        <Content title="bye" sub="holy" />
       </div>
     );
   }

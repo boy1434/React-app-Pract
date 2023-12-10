@@ -1,11 +1,12 @@
 
 function Content(props) {
+  console.log('Content render');
     return (
       <header>
       <h2>
         {props.title}
       </h2>
-      {props.sub}
+      {props.desc}
       </header>
       
     )

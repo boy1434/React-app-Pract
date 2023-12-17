@@ -1,10 +1,10 @@
 
-function Content(props) {
+function CreateContent(props) {
   console.log('Content render');
     return (
       <header>
       <h2>
-        {props.title}
+        Create
       </h2>
       {props.desc}
       </header>
@@ -12,4 +12,4 @@ function Content(props) {
     )
   }
 
-  export default Content;
+  export default CreateContent;

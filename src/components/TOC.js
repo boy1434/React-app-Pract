@@ -19,7 +19,7 @@ class TOC extends Component {
             >{data[i].title}</a></li>);
         i = i + 1;
     }
-    return(
+    return( 
     <ul>
       {lists}
     </ul>

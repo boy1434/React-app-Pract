@@ -6,10 +6,12 @@ import TOC from './components/TOC';
 import ReadContent from './components/ReadContent';
 import Control from './components/Control';
 import CreateContent from './components/CreateContent';
+import UpdateContent from './components/UpdateContent';
 
 class App extends Component {
   constructor(props){
     super(props);
+    this.max_content_id = 3;
     this.state = {
       mode:'create',
       selected_content_id:2,
@@ -42,7 +44,35 @@ class App extends Component {
         }
         _article = <ReadContent title={_title} desc={_desc} />
       } else if(this.state.mode === 'create'){
-        _article = < CreateContent/>
+        _article = < CreateContent onSubmit={function(_title,_desc){
+          this.max_content_id = this.max_content_id+1;
+          // this.state.contents.push(
+          //   {id:this.max_content_id, title:_title, desc:_desc}
+          // );
+          var _contents = this.state.contents.concat(
+            {id:this.max_content_id, title:_title, desc:_desc}
+            )
+    
+          this.setState({
+            contents:_contents
+          });
+          console.log(_title,_desc);
+        }.bind(this)} />
+      } else if(this.state.mode === 'update'){
+        _article = < UpdateContent onSubmit={function(_title,_desc){
+          this.max_content_id = this.max_content_id+1;
+          // this.state.contents.push(
+          //   {id:this.max_content_id, title:_title, desc:_desc}
+          // );
+          var _contents = this.state.contents.concat(
+            {id:this.max_content_id, title:_title, desc:_desc}
+            )
+    
+          this.setState({
+            contents:_contents
+          });
+          console.log(_title,_desc);
+        }.bind(this)} />
       }
       return (
         <div className="App">
